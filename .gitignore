@@ -26,6 +26,8 @@ __pycache__/
 env/
 venv/
 ENV/
+kalshi.py
+polymarket.py
 
 # Streamlit 特定配置
 .streamlit/secrets.toml
