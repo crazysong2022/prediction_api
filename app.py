@@ -61,7 +61,7 @@ active_option = st.sidebar.selectbox(
 )
 start_date = st.sidebar.date_input(
     get_translation("start_date_label", st.session_state.language),
-    value=datetime(2024, 1, 1)
+    value=datetime(2024, 9, 1)
 )
 end_date = st.sidebar.date_input(
     get_translation("end_date_label", st.session_state.language),
@@ -89,7 +89,7 @@ params = {
     "offset": str(st.session_state.page * page_size),
     "active": None,
     "start_date_min": datetime.combine(start_date, datetime.min.time()).strftime("%Y-%m-%dT%H:%M:%SZ"),
-    "end_date_min": datetime.combine(end_date, datetime.min.time()).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    "end_date_max": datetime.combine(end_date, datetime.max.time()).strftime("%Y-%m-%dT%H:%M:%SZ"),
     "volume_min": str(volume_min)
 }
 
@@ -274,6 +274,11 @@ else:
                 st.info(get_translation("no_market_data", st.session_state.language))
         else:
             st.error("No event found with this slug.")
+
+
+
+
+
 
 
 
